@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useParams, useRouteMatch } from 'react-router-dom';
 
-const Movie = (props) => {
+const Movie = ({movies}) => {
   const [movie, setMovie] = useState();
+
+  const {path, url} = useRouteMatch()
+  const {movieId} = useParams()
  
   useEffect(() => {
     const id = 1;
